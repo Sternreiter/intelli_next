@@ -69,7 +69,6 @@ async function main() {
 
     app.listen(PORT, () => {
       console.log(`escuchando el puerto ${PORT}`);
-      console.log('NODE ENV test %j',config.NODE_ENV);
     })
   } catch (e) {
     console.log("Unable to connect to the database", e)

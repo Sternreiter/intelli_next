@@ -134,8 +134,6 @@ app.get('/users', async (_req, res) => {
 app.get('/users/:id', VerifyToken, async (req, res) => {
     try {
 
-        console.log({req: req.params})
-
         const { id } = req.params;
 
         const data: any = await User.findOne({ where: { id } })
