@@ -25,11 +25,18 @@ cd intelli_next
 
 npm install
 
-4- Compila TypeScript:
+4- Crear BD en postgresql con los siguientes parametros de configuracion:
+
+Puerto= 5432
+Nombre= intellinext
+Usuario= postgres
+Password= postgre
+
+5- Compila TypeScript:
 
 npm run tsc
 
-5- Inicia la aplicación:
+6- Inicia la aplicación:
 
 npm start
 
