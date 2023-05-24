@@ -54,6 +54,21 @@ app.use(express.json())
 
 app.post('/users/login', validatorHandler(login, 'body'), async (req, res) => {
     try {
+
+        const data: any = await User.findAll()
+        // Solución alternativa para crear un usuario base con el que hacer las pruebas, para no requerir crearlo por BD.
+        if(data == ''){
+            let datos = {
+                name: 'Luis Plaza',
+                phone: '584241797753',
+                email: 'suilppm@gmail.com',
+                address: 'Los Teques, Miranda, Venezuela',
+                password: 'IntelliNext'
+            }
+
+            await User.create(datos)
+        }
+
         const { phone, password } = req.body;
 
         const user: any = await User.findOne({ where: { phone } })
@@ -204,7 +219,7 @@ app.get('/users/:id', VerifyToken, async (req, res) => {
  *        descriptions: general error
  */
 
-app.post('/users', validatorHandler(register, 'body'), async (req, res) => {
+app.post('/users', VerifyToken, validatorHandler(register, 'body'), async (req, res) => {
     try {
 
         const data = await User.create(req.body)

@@ -12,6 +12,7 @@ const app = express()
 
 async function main() {
   try {
+    console.log({config})
     await sequelize.sync();
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());

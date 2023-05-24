@@ -7,6 +7,8 @@ switch (process.env.NODE_ENV){
     break;
 }
 
+console.log({PRUEBA: process.env.NODE_ENV})
+
 const config = {
   PORT: process.env.PORT,
   DATABASE_URL: process.env.DATABASE_URL,

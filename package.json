@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev src/app.ts",
+    "dev": "NODE_ENV=development ts-node-dev src/app.ts",
     "start": "NODE_ENV=production node build/app.js",
     "tsc": "tsc",
-    "test": "jest --verbose"
+    "test": "NODE_ENV=development jest --verbose"
   },
   "repository": {
     "type": "git",
